@@ -27,7 +27,9 @@ public class Printer {
         this.modelNumber = modelNumber;
     }
     public void print(){
+        if(isOn){
         System.out.println(modelNumber+" "+isOn);
+    }
     }
     public void print(String string){
         System.out.println(string);
