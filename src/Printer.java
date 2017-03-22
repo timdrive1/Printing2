@@ -4,47 +4,46 @@ import java.util.ArrayList;
 /**
  * Created by Тим on 15.03.2017.
  */
-public class Printer {
-    private boolean isOn;
+public class Printer extends Machine {
+   // private boolean isOn;
     private String modelNumber;
 
     @Override
     public String toString() {
         return "Printer{" +
-                "isOn=" + isOn +
+                /*"isOn=" + isOn +*/
                 ", modelNumber='" + modelNumber + '\'' +
                 '}';
     }
 
-    public boolean isOn() {
+   /* public boolean isOn() {
         return isOn;
-    }
+    }*/
 
     public String getModelNumber() {
         return modelNumber;
     }
 
-    public Printer(boolean isOn, String modelNumber) {
-
-        this.isOn = isOn;
+    public Printer(String modelNumber) {
+        super(true);
         this.modelNumber = modelNumber;
     }
 
-    public void print() {
+    /*public void print() {
         if (isOn) {
             System.out.println("Принтер №" + getModelNumber() + "включен");
         } else {
             System.out.println("Принтер №" + getModelNumber() + "выключен!");
 
         }
-    }
+    }*/
 
     public void print(String string) {
         System.out.println(string);
     }
 
     public void print(String text, int copies) {
-        if (isOn) {
+        if (checkIsOn()) {
             for (int i = 0; i < copies; i++) {
                 System.out.println(text);
             }
