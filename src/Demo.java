@@ -6,6 +6,5 @@ public class Demo {
         Printer printer1 = new Printer(true, "1");
         printer1.print();
         printer1.printColors();
-
-    }
+    }//test
 }

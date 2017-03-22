@@ -29,30 +29,32 @@ public class Printer {
         this.isOn = isOn;
         this.modelNumber = modelNumber;
     }
-    public void print(){
-        if(isOn){
-        System.out.println("Принтер №"+getModelNumber()+"включен");
-    }
-    else{
-            System.out.println("Принтер №"+getModelNumber()+"выключен!");
+
+    public void print() {
+        if (isOn) {
+            System.out.println("Принтер №" + getModelNumber() + "включен");
+        } else {
+            System.out.println("Принтер №" + getModelNumber() + "выключен!");
 
         }
     }
-    public void print(String string){
+
+    public void print(String string) {
         System.out.println(string);
     }
-    public  void print(String text, int copies){
-        if(isOn){
-            for (int i = 0; i < copies ; i++) {
+
+    public void print(String text, int copies) {
+        if (isOn) {
+            for (int i = 0; i < copies; i++) {
                 System.out.println(text);
             }
-        }
-        else{
-            System.out.println("Принтер №"+getModelNumber()+"выключен!");
+        } else {
+            System.out.println("Принтер №" + getModelNumber() + "выключен!");
 
         }
     }
-    public void printColors(){
+
+    public void printColors() {
        /* ArrayList<String> colors = new ArrayList<String>();
         String red = "Red";
         colors.add(red);
@@ -60,7 +62,7 @@ public class Printer {
         colors.add(blue);
         String green = "Green";
         colors.add(green);*/
-        for (Color x: Color.values()) {
+        for (Color x : Color.values()) {
             System.out.println(x.colorasString + " " + Integer.toHexString(x.code));
         }
 
