@@ -3,9 +3,9 @@
  */
 public class Demo {
     public static void main(String[] args) {
-        Printer printer1 = new Printer(false, "1");
+        Printer printer1 = new Printer(true, "1");
         printer1.print();
-        printer1.print("Курлы-курлы");
+        printer1.printColors();
 
     }
 }
