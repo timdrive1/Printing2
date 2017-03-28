@@ -2,7 +2,7 @@
  * Created by MUtemov on 22.03.2017.
  */
 public class Machine implements IMachine {
-    private boolean isOn;
+    public boolean isOn;
 
     public void turnOn() {
         isOn = true;

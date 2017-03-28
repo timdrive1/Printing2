@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * Created by Тим on 15.03.2017.
  */
 public class Printer implements IMachine {
-    private boolean isOn;
+    //private boolean isOn;
     private String modelNumber;
     public IMachine iMachine;
     PaperTray paperTray = new PaperTray();
@@ -13,7 +13,7 @@ public class Printer implements IMachine {
     @Override
     public String toString() {
         return "Printer{" +
-                "isOn=" + isOn +
+                /*"isOn=" + isOn +*/
                 ", modelNumber='" + modelNumber + '\'' +
                 '}';
     }
@@ -24,13 +24,13 @@ public class Printer implements IMachine {
 
     @Override
     public void turnOn() {
-        isOn = true;
+        iMachine.turnOn();
         System.out.println("Printer is on!");
     }
 
     @Override
     public void turnOff() {
-        isOn = false;
+        iMachine.turnOff();
         System.out.println("Printer is off!");
     }
 
@@ -39,11 +39,12 @@ public class Printer implements IMachine {
     }
 
     public Printer(String modelNumber) {
+        iMachine = new Machine(false);
         this.modelNumber = modelNumber;
     }
 
     public boolean checkIsOn(){
-        if(isOn){
+        if(iMachine.checkIsOn()){
             return true;
         }
         else return false;

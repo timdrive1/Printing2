@@ -16,9 +16,15 @@ public class Demo {
         //commit
         Machine machine = new Machine(false);
         machine.turnOn();
-        IMachine printer = new Printer("Machine - printer");
+        machine.turnOff();
+        /*IMachine printer = new Printer("Machine - printer");
         printer.turnOn();
-        printer.turnOff();
-        //commit
+        printer.turnOff();*/
+        printer1.turnOn();
+        printer1.loadPaper(2);
+        printer1.print("Copy",2);
+        printer1.turnOff();
+
+
     }//test inheritance
 }
