@@ -3,9 +3,18 @@
  */
 public class Machine implements IMachine {
     private boolean isOn;
-    public void turnOn(){isOn = true;}
-    public void turnOff(){isOn = false;}
-    public boolean checkIsOn(){
+
+    public void turnOn() {
+        isOn = true;
+        System.out.println("Machine is on!");
+    }
+
+    public void turnOff() {
+        isOn = false;
+        System.out.println("Machine is off!");
+    }
+
+    public boolean checkIsOn() {
         return isOn;
     }
 
