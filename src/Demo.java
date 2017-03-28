@@ -16,7 +16,7 @@ public class Demo {
         //commit
         Machine machine = new Machine(false);
         machine.turnOn();
-        Machine printer = new Printer("Machine - printer");
+        IMachine printer = new Printer("Machine - printer");
         printer.turnOn();
         printer.turnOff();
         //commit

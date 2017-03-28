@@ -4,8 +4,8 @@ import java.util.ArrayList;
 /**
  * Created by Тим on 15.03.2017.
  */
-public class Printer extends Machine implements IMachine {
-   // private boolean isOn;
+public class Printer implements IMachine {
+    private boolean isOn;
     private String modelNumber;
     public IMachine iMachine;
     PaperTray paperTray = new PaperTray();
@@ -13,7 +13,7 @@ public class Printer extends Machine implements IMachine {
     @Override
     public String toString() {
         return "Printer{" +
-                /*"isOn=" + isOn +*/
+                "isOn=" + isOn +
                 ", modelNumber='" + modelNumber + '\'' +
                 '}';
     }
@@ -24,8 +24,14 @@ public class Printer extends Machine implements IMachine {
 
     @Override
     public void turnOn() {
-        System.out.println("Warming up printer");
-        super.turnOn();
+        isOn = true;
+        System.out.println("Printer is on!");
+    }
+
+    @Override
+    public void turnOff() {
+        isOn = false;
+        System.out.println("Printer is off!");
     }
 
     private String getModelNumber() {
@@ -33,8 +39,14 @@ public class Printer extends Machine implements IMachine {
     }
 
     public Printer(String modelNumber) {
-        super(true);
         this.modelNumber = modelNumber;
+    }
+
+    public boolean checkIsOn(){
+        if(isOn){
+            return true;
+        }
+        else return false;
     }
 
     /*public void print() {
