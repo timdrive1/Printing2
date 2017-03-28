@@ -4,9 +4,11 @@ import java.util.ArrayList;
 /**
  * Created by Тим on 15.03.2017.
  */
-public class Printer extends Machine {
+public class Printer extends Machine implements IMachine {
    // private boolean isOn;
     private String modelNumber;
+    public IMachine iMachine;
+    PaperTray paperTray = new PaperTray();
 
     @Override
     public String toString() {
@@ -20,7 +22,7 @@ public class Printer extends Machine {
         return isOn;
     }*/
 
-    public String getModelNumber() {
+    private String getModelNumber() {
         return modelNumber;
     }
 
@@ -44,23 +46,26 @@ public class Printer extends Machine {
 
     public void print(String text, int copies) {
         if (checkIsOn()) {
-            for (int i = 0; i < copies; i++) {
+            while (copies > 0 && !paperTray.isEmpty()){
                 System.out.println(text);
+                paperTray.usePage();
             }
+            if(paperTray.isEmpty()){
+                System.out.println("There is no paper");
+            }
+            /*for (int i = 0; i < copies; i++) {
+                System.out.println(text);
+            }*/
         } else {
-            System.out.println("Принтер №" + getModelNumber() + "выключен!");
-
+            System.out.println("Принтер №" + getModelNumber() + " " + "выключен!");
         }
     }
 
+    public void loadPaper(int count){
+        paperTray.addPaper(count);
+    }
+
     public void printColors() {
-       /* ArrayList<String> colors = new ArrayList<String>();
-        String red = "Red";
-        colors.add(red);
-        String blue = "Blue";
-        colors.add(blue);
-        String green = "Green";
-        colors.add(green);*/
         for (Color x : Color.values()) {
             System.out.println(x.colorasString + " " + Integer.toHexString(x.code));
         }
