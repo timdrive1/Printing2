@@ -14,11 +14,11 @@ public class Demo {
         /*printer1.loadPaper(2);
         printer1.print("Is printing",2);*/
         //commit
-        /*Machine machine = new Machine(false);
+        Machine machine = new Machine(false);
         machine.turnOn();
         Machine printer = new Printer("Machine - printer");
         printer.turnOn();
-        printer.turnOff();*/
+        printer.turnOff();
         //commit
     }//test inheritance
 }

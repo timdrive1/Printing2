@@ -22,6 +22,12 @@ public class Printer extends Machine implements IMachine {
         return isOn;
     }*/
 
+    @Override
+    public void turnOn() {
+        System.out.println("Warming up printer");
+        super.turnOn();
+    }
+
     private String getModelNumber() {
         return modelNumber;
     }
