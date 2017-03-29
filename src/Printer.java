@@ -4,7 +4,7 @@ import java.util.ArrayList;
 /**
  * Created by Тим on 15.03.2017.
  */
-public class Printer<T> implements IMachine {
+public class Printer<T extends ICartridge> implements IMachine {
     //generics12
     T cartridge;
     private String modelNumber;
@@ -17,7 +17,7 @@ public class Printer<T> implements IMachine {
         this.cartridge = cartridge;
 
     }
-    public<U> void printUsingCartridge(U cartridge, String text){
+    public<U extends ICartridge> void printUsingCartridge(U cartridge, String text){
         System.out.println(cartridge.toString()+"\n"+text);
 
     }
