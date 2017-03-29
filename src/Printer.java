@@ -5,7 +5,7 @@ import java.util.ArrayList;
  * Created by Тим on 15.03.2017.
  */
 public class Printer implements IMachine {
-    //private boolean isOn;
+    //generics
     private String modelNumber;
     public IMachine iMachine;
     PaperTray paperTray = new PaperTray();
