@@ -17,6 +17,10 @@ public class Printer<T> implements IMachine {
         this.cartridge = cartridge;
 
     }
+    public<U> void printUsingCartridge(U cartridge, String text){
+        System.out.println(cartridge.toString()+"\n"+text);
+
+    }
     @Override
     public String toString() {
         return "Printer{" +
