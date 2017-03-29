@@ -4,12 +4,19 @@ import java.util.ArrayList;
 /**
  * Created by Тим on 15.03.2017.
  */
-public class Printer implements IMachine {
+public class Printer<T> implements IMachine {
     //generics12
+    T cartridge;
     private String modelNumber;
     public IMachine iMachine;
     PaperTray paperTray = new PaperTray();
 
+    public Printer(String modelNumber, T cartridge) {
+        iMachine = new Machine(false);
+        this.modelNumber = modelNumber;
+        this.cartridge = cartridge;
+
+    }
     @Override
     public String toString() {
         return "Printer{" +
@@ -38,10 +45,7 @@ public class Printer implements IMachine {
         return modelNumber;
     }
 
-    public Printer(String modelNumber) {
-        iMachine = new Machine(false);
-        this.modelNumber = modelNumber;
-    }
+
 
     public boolean checkIsOn(){
         if(iMachine.checkIsOn()){
@@ -65,7 +69,9 @@ public class Printer implements IMachine {
 
     public void print(String text, int copies) {
         if (checkIsOn()) {
+            System.out.println(cartridge.toString());
             while (copies > 0 && !paperTray.isEmpty()){
+
                 System.out.println(text);
                 paperTray.usePage();
             }
